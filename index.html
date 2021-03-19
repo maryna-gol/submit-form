@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+</head>
+<body>
+    
+<!-- label and input are inline elements-->
+<form class="js-speaker-form">
+    <label for="">Name</label>
+    <!-- for need id (for<=>id)-->
+    <input type="text" name="user-name" id="name" />
+    <br />
+    <label for="tel">Telephone</label>
+    <input type="tel" name="tel" id="tel" />
+    <br />
+    <label for="mail">Email</label>
+    <input type="email" name="mail" id="mail" />
+    <br />
+
+
+    <div role="group">
+        <input type="checkbox" name="topic" value="html" id="html" />
+        <label for="html">HTML</label>
+
+        <input type="checkbox" name="topic" value="css" id="css" />
+        <label for="css">CSS</label>
+
+        <input type="checkbox" name="topic" value="js" id="js" />
+        <label for="js">JavaScript</label>
+    </div>
+    <!-- same name for all checkbox-->
+
+    <div role="group">
+        <input type="radio" name="experience" value="junior" id="junior" checked>
+        <label for="junior">Junior</label>
+            
+        <input type="radio" name="experience" value="middle" id="middle">
+        <label for="middle">Middle</label>
+            
+        <input type="radio" name="experience" value="senior" id="senior">
+        <label for="senior">Senior</label>
+    </div>
+    <!-- same name for all radio-->
+    <label for="date">Date of report</label>
+    <input type="time" name="time" id="date" />
+
+    <br />
+    <label for="pdf">Upload your presentation</label>
+    <input type="file" name="pdf" id="pdf" />
+
+    <br />
+    <label for="comment">Write your comment</label>
+    <textarea name="comment" id="comment" rows="8"></textarea>
+    <!--type (textarea) inline-->
+
+    <br />
+    <input type="checkbox" name="policy" id="policy" />
+    <label for="policy">Accept privat policy</label>
+
+    <br />
+    <button type="submit">Submit your application</button>
+    
+</form>
+
+
+<script>
+    (() => {
+        document
+        .querySelector(".js-speaker-form")
+        .addEventListener("sumbit", e => {
+            e.preventDefault();
+
+            new FormData(e.currentTarget).forEach((value,name)=>
+                console.log(`${name}: ${value}`),
+            );   
+            e.currentTarget.reset(); 
+        });
+    })();
+</script>
+</body>
+</html>
