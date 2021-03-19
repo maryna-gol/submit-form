@@ -10,58 +10,100 @@
 <body>
     
 <!-- label and input are inline elements-->
-<form class="js-speaker-form">
-    <label for="">Name</label>
+<form class="form js-speaker-form" autocomplete="on">
+    <div class="form-field">
+    <label for="name" class="form-label">Name</label>
     <!-- for need id (for<=>id)-->
-    <input type="text" name="user-name" id="name" />
-    <br />
-    <label for="tel">Telephone</label>
-    <input type="tel" name="tel" id="tel" />
-    <br />
-    <label for="mail">Email</label>
-    <input type="email" name="mail" id="mail" />
-    <br />
+    <input 
+    class="form-input"
+    type="text" 
+    name="user-name" 
+    id="name" 
+    placeholder="Name"
+    autofocus 
+    />
+    </div>
+    <!-- autofocus - kan vare bare på et element! -->
+    
 
+    <div class="form-field">
+        <label for="tel">Telephone</label>
+        <input type="tel" name="tel" id="tel" placeholder="Telephone" />
+    
+    </div>
+
+    <div class="form-field">
+        <label for="mail">Email</label>
+        <input type="email" name="mail" id="mail" placeholder="Email"/>
+    </div>  
 
     <div role="group">
-        <input type="checkbox" name="topic" value="html" id="html" />
-        <label for="html">HTML</label>
-
-        <input type="checkbox" name="topic" value="css" id="css" />
-        <label for="css">CSS</label>
-
-        <input type="checkbox" name="topic" value="js" id="js" />
-        <label for="js">JavaScript</label>
+        <h2 class="group-title">Report topic</h2>
+    <ul class="topic-options">
+        <li>
+            <input type="checkbox" name="topic" value="html" id="html" />
+            <label for="html">HTML</label>
+        </li>
+                
+        <li>
+            <input type="checkbox" name="topic" value="css" id="css" />
+            <label for="css">CSS</label>
+        </li>
+                
+        <li>
+            <input type="checkbox" name="topic" value="js" id="js" />
+            <label for="js">JavaScript</label>
+        </li>
+    </ul>
     </div>
     <!-- same name for all checkbox-->
 
-    <div role="group">
-        <input type="radio" name="experience" value="junior" id="junior" checked>
-        <label for="junior">Junior</label>
-            
-        <input type="radio" name="experience" value="middle" id="middle">
-        <label for="middle">Middle</label>
-            
-        <input type="radio" name="experience" value="senior" id="senior">
-        <label for="senior">Senior</label>
+    <div role="group" class="group">
+        <h2 class="group-title">Level of your experience</h2>
+
+        <ul class="experience-options">
+            <li>
+                <input type="radio" name="experience" value="junior" id="junior">
+                <label for="junior">Junior</label>
+            </li>
+            <li>
+                <input type="radio" name="experience" value="middle" id="middle">
+                <label for="middle">Middle</label>
+            </li>
+            <li>
+                <input type="radio" name="experience" value="senior" id="senior">
+                <label for="senior">Senior</label>
+            </li>
+        </ul>      
     </div>
     <!-- same name for all radio-->
-    <label for="date">Date of report</label>
-    <input type="time" name="time" id="date" />
+    <div class="form-field">
+        <label for="datetime-local">Date of report</label>
+        <input type="time" name="time" id="date" class="date" />
+    </div>
 
-    <br />
-    <label for="pdf">Upload your presentation</label>
-    <input type="file" name="pdf" id="pdf" />
+    <div class="form-field">
+        <label for="pdf">Upload your presentation</label>
+        <input type="file" name="pdf" id="pdf" />
+    </div>
 
-    <br />
-    <label for="comment">Write your comment</label>
-    <textarea name="comment" id="comment" rows="8"></textarea>
+    <div class="form-field">
+        <label for="comment">Write your comment</label>
+        <textarea 
+        class="comment"
+        name="comment" 
+        id="comment" 
+        rows="8"
+        placeholder="Specify the details of the report"
+        ></textarea>
     <!--type (textarea) inline-->
+    </div>
 
-    <br />
-    <input type="checkbox" name="policy" id="policy" />
-    <label for="policy">Accept privat policy</label>
-
+    <div class="form-field">
+        <input type="checkbox" name="policy" id="policy" />
+        <label for="policy">Accept privat policy</label>
+    </div>  
+   
     <br />
     <button type="submit">Submit your application</button>
     
