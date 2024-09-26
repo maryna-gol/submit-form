@@ -29,5 +29,9 @@ This repository contains an example HTML form that demonstrates how to collect u
 - Accept the privacy policy by checking the checkbox.
 - Click the "Submit your application" button to log the form data to the console and reset the form.
 
+### Show your support
+
+Give a ⭐ if you like this website!
+
 # Contributors
 - [Maryna Goloborodko](https://github.com/maryna-gol)
